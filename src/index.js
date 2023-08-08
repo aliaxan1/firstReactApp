@@ -1,17 +1,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+const BookList = () => {
+    return (
+        <section>
+            <Book />
+            <Book />
+            <Book />
+        </section>
+    );
+};
+
+const Book = () => {
+    return (
+        <article>
+            <Image />
+            <Title />
+            <Author />
+        </article>
+    );
+}
+
+const Image = () => {
+    return (
+        <img
+            src='https://m.media-amazon.com/images/P/1684330408.01._SCLZZZZZZZ_SX500_.jpg'
+            alt='The Five Wishes of Mr. Murray McBride'
+        />
+    );
+}
+
+const Title = () => {
+    return (
+        <h1>The Five Wishes of Mr. Murray McBride</h1>
+    );
+}
+
+const Author = () => {
+    return (
+        <h4>Joe Siple</h4>
+    );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(<BookList />);
