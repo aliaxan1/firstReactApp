@@ -2,44 +2,43 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
+
+
+const books = [
+    {
+        title: 'The Five Wishes of Mr. Murray McBride',
+        author: 'Joe Siple',
+        img: 'https://m.media-amazon.com/images/P/1684330408.01._SCLZZZZZZZ_SX500_.jpg'
+    },
+    {
+        title: 'Until I Get You',
+        author: 'Claire Contreras',
+        img: 'https://m.media-amazon.com/images/P/1733041109.01._SCLZZZZZZZ_SX500_.jpg'
+    },
+    {
+        title: 'Ruin: A Novel of Flyfishing in Bankruptcy',
+        author: ' Leigh Seippel',
+        img: 'https://m.media-amazon.com/images/P/1947951602.01._SCLZZZZZZZ_SX500_.jpg'
+    },
+];
+
 const BookList = () => {
     return (
         <section className='booklist'>
-            <Book />
-            <Book />
-            <Book />
+            {books.map((book) => { <Book {...Book} /> })};
         </section>
     );
 };
 
-const Book = () => {
+const Book = (props) => {
+    const { img, title, author } = props;
+    console.log(props);
     return (
         <article className='book'>
-            <Image />
-            <Title />
-            <Author />
+            <img src={img} alt={title} />
+            <h1>{title}</h1>
+            <h4>{author}</h4>
         </article>
-    );
-}
-
-const Image = () => {
-    return (
-        <img
-            src='https://m.media-amazon.com/images/P/1684330408.01._SCLZZZZZZZ_SX500_.jpg'
-            alt='The Five Wishes of Mr. Murray McBride'
-        />
-    );
-}
-
-const Title = () => {
-    return (
-        <h1>The Five Wishes of Mr. Murray McBride</h1>
-    );
-}
-
-const Author = () => {
-    return (
-        <h4>Joe Siple</h4>
     );
 }
 
