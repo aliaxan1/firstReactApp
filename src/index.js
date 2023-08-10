@@ -25,7 +25,7 @@ const books = [
 const BookList = () => {
     return (
         <section className='booklist'>
-            {books.map((book) => { <Book {...book} /> })};
+            {books.map((book) =>  <Book {...book} /> )};
         </section>
     );
 };
